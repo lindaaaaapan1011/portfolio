@@ -548,7 +548,7 @@ const ExperienceContent = () => {
                   </div>
                 </div>
                 <div className="flex items-center justify-between gap-2 mt-0.5">
-                  <div className={`text-[11px] ${isActive ? 'text-gray-600' : 'text-gray-500'} leading-snug truncate`}>
+                  <div className={`text-[11px] ${isActive ? 'text-gray-700' : 'text-gray-600'} font-medium leading-snug truncate`}>
                     {exp.company}
                   </div>
                   {/* 完整显示时间段 */}
@@ -604,7 +604,7 @@ const ExperienceContent = () => {
                 )}
               </h2>
               <div className="flex justify-between items-center gap-6">
-                <span className="text-[15px] font-medium text-gray-600">{active.company}</span>
+                <span className="text-[15px] font-medium text-gray-700">{active.company}</span>
                 {active.location && (
                   // 右对齐工作地点及icon，整体往左挪动一点
                   <span className="flex items-center gap-2 text-[15px] font-bold text-gray-800 justify-end min-w-[60px] mr-4">
