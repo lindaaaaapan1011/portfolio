@@ -221,7 +221,7 @@ const ProfileContent = () => (
         </span>
       </motion.div>
 
-      <motion.div className="text-[16px] text-gray-600 mb-10" style={{ lineHeight: '1.8', letterSpacing: '0.005em' }}>
+      <motion.div className="text-[16px] text-gray-800 font-medium mb-10" style={{ lineHeight: '1.8', letterSpacing: '0.005em' }}>
         <motion.p variants={profileTextLineVariants}>
           我擅长深入洞察客户需求，通过
           <span className="relative inline-block font-medium text-gray-900 mx-0.5">
@@ -278,13 +278,13 @@ const ProfileContent = () => (
           <p className="font-bold text-gray-900 mb-1 text-sm">
             电话：
           </p>
-          <p className="text-gray-600 text-sm">13585754192</p>
+          <p className="text-gray-800 font-medium text-sm">13585754192</p>
         </div>
         <div>
           <p className="font-bold text-gray-900 mb-1 text-sm">
             邮箱：
           </p>
-          <p className="text-gray-600 text-sm">lindapan1011@163.com</p>
+          <p className="text-gray-800 font-medium text-sm">lindapan1011@163.com</p>
         </div>
       </motion.div>
     </motion.div>
@@ -624,7 +624,7 @@ const ExperienceContent = () => {
                 const parts = point.split(/[：:]/); 
                 const highlightPhrases = experienceHighlightMap[active.companyKey]?.[i] || [];
                 return (
-                  <div key={i} className="flex gap-4 text-[14px] text-gray-700 leading-relaxed">
+                  <div key={i} className="flex gap-4 text-[14px] text-gray-800 font-medium leading-relaxed">
                     <span className="mt-2.5 w-1 h-1 rounded-full bg-gray-400 shrink-0" />
                     <span className="flex-1">
                       {parts.length > 1 ? (
@@ -766,7 +766,7 @@ const SkillsContent = () => {
       <div className="flex justify-between items-start mb-6 shrink-0">
         <div>
           <h2 className="text-[30px] font-bold text-gray-900 leading-tight tracking-tight">My Tech Stack & Methods</h2>
-          <p className="text-gray-600 text-[12px] mt-2 max-w-sm leading-relaxed">
+          <p className="text-gray-700 font-medium text-[12px] mt-2 max-w-sm leading-relaxed"> 
             擅长深入洞察客户需求，拆解业务痛点，用 AI 赋能业务提质、提效
           </p>
         </div>
@@ -826,7 +826,7 @@ const SkillsContent = () => {
                       {/* 2. 文字区：在下部 */}
                       <div className="flex-1 flex flex-col min-w-0 px-5 pt-5 pb-5">
                         <h3 className="text-[18px] font-semibold text-gray-900 mb-1.5">{skill.title}</h3>
-                        <p className="text-[12px] text-gray-600 leading-relaxed mb-4">{skill.desc}</p>
+                        <p className="text-[12px] text-gray-800 font-medium leading-relaxed mb-4">{skill.desc}</p>
                         <div className="flex flex-wrap gap-1.5 mt-auto">
                           {/* 3. 标签：底色改为 bg-white */}
                           {skill.tags.map((tag, i) => (
@@ -891,7 +891,7 @@ const ProjectsContent = () => {
           >
             <motion.span
               variants={profileTextLineVariants}
-              className="text-sm font-medium text-gray-500 w-fit mb-6 tracking-wide"
+              className="text-[15px] text-gray-700 font-medium leading-relaxed mb-10 space-y-4"
             >
               {project.year}
             </motion.span>
@@ -916,7 +916,7 @@ const ProjectsContent = () => {
               <div className="space-y-3">
                 <div className="flex gap-3">
                   <span className="text-[#5b5fff] text-[13px] font-bold shrink-0 mt-0.5">01</span>
-                  <p className="text-[13px] text-gray-600 leading-relaxed">
+                  <p className="text-[13px] text-gray-800 font-medium leading-relaxed">
                     <span className="font-medium text-gray-800">构建内容标签树：</span>
                     基于母婴人群洞察，设计覆盖产品卖点（FABE 模型）、内容类型、视频风格、人物设定和视听语言的内容标签树，为 AI 分析提供结构化语料
                   </p>
