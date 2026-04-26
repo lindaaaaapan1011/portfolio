@@ -224,7 +224,7 @@ const ProfileContent = () => (
       <motion.div className="text-[16px] text-gray-800 font-medium mb-10" style={{ lineHeight: '1.8', letterSpacing: '0.005em' }}>
         <motion.p variants={profileTextLineVariants}>
           我擅长深入洞察客户需求，通过
-          <span className="relative inline-block font-medium text-gray-900 mx-0.5">
+          <span className="relative inline-block font-bold text-gray-900 mx-0.5">
             定量定性调研拆解业务痛点
             <svg
               className="absolute w-full h-[13px] -bottom-[3px] left-0 pointer-events-none"
@@ -247,7 +247,7 @@ const ProfileContent = () => (
             </svg>
           </span>
           ，曾主导 0-1 搭建黄金脚本 AI Agent，实现 AI 赋能营销全链路提效，
-          <span className="relative inline-block font-medium text-gray-900 mx-0.5">
+          <span className="relative inline-block font-bold text-gray-900 mx-0.5">
             内容投放成本降低超 50%
             <svg
               className="absolute w-full h-[13px] -bottom-[3px] left-0 pointer-events-none"
@@ -607,7 +607,7 @@ const ExperienceContent = () => {
                 <span className="text-[15px] font-medium text-gray-600">{active.company}</span>
                 {active.location && (
                   // 右对齐工作地点及icon，整体往左挪动一点
-                  <span className="flex items-center gap-2 text-[15px] text-gray-600 justify-end min-w-[60px] mr-4">
+                  <span className="flex items-center gap-2 text-[15px] font-bold text-gray-800 justify-end min-w-[60px] mr-4">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
                       <path d="M10 2.75C6.82436 2.75 4.25 5.21815 4.25 8.30667C4.25 12.0027 9.27815 16.8896 9.49134 17.0903C9.63692 17.2256 9.81671 17.3 10 17.3C10.1833 17.3 10.3631 17.2256 10.5087 17.0903C10.7219 16.8896 15.75 12.0027 15.75 8.30667C15.75 5.21815 13.1756 2.75 10 2.75ZM10 9.9C9.04243 9.9 8.25 9.12568 8.25 8.21923C8.25 7.31278 9.04243 6.53846 10 6.53846C10.9576 6.53846 11.75 7.31278 11.75 8.21923C11.75 9.12568 10.9576 9.9 10 9.9Z"/>
                     </svg>
@@ -904,7 +904,7 @@ const ProjectsContent = () => {
             </motion.h3>
             <motion.div
               variants={profileTextLineVariants}
-              className="text-[15px] text-gray-500 leading-relaxed mb-10 space-y-4"
+              className="text-[15px] font-bold text-gray-800 leading-relaxed mb-10 space-y-4"
             >
               {project.description.split('\n').map((p, i) => (
                 <p key={i}>{p}</p>
@@ -923,7 +923,7 @@ const ProjectsContent = () => {
                 </div>
                 <div className="flex gap-3">
                   <span className="text-[#5b5fff] text-[13px] font-bold shrink-0 mt-0.5">02</span>
-                  <p className="text-[13px] text-gray-600 leading-relaxed">
+                  <p className="text-[13px] font-bold text-gray-800 leading-relaxed">
                     <span className="font-medium text-gray-800">AI 工作流设计：</span>
                     主导设计"素材分析——爆款模式提炼——自动脚本生成"的 AI Agent 流程；输入 200+ 条高表现视频，AI 自动归纳爆款共性规律并沉淀为脚本框架、新脚本及 VO 文案
                   </p>
@@ -938,7 +938,7 @@ const ProjectsContent = () => {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#5b5fff]"></span>
                 效果验证
               </h4>
-              <p className="text-[13px] text-gray-700 leading-[1.8]">
+              <p className="text-[13px] font-bold text-gray-800 leading-[1.8]">
                 Prime Day 期间完成 8 条 AI 脚本视频剪辑与广告投放验证，其中 4 条脚本成功出单，
                 <span className="font-bold text-[#5b5fff]"> 引流成本 </span>
                 vs 非 AI 二剪内容
