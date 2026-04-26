@@ -923,7 +923,7 @@ const ProjectsContent = () => {
                 </div>
                 <div className="flex gap-3">
                   <span className="text-[#5b5fff] text-[13px] font-bold shrink-0 mt-0.5">02</span>
-                  <p className="text-[13px] font-bold text-gray-800 leading-relaxed">
+                  <p className="text-[13px] font-medium text-gray-800 leading-relaxed">
                     <span className="font-medium text-gray-800">AI 工作流设计：</span>
                     主导设计"素材分析——爆款模式提炼——自动脚本生成"的 AI Agent 流程；输入 200+ 条高表现视频，AI 自动归纳爆款共性规律并沉淀为脚本框架、新脚本及 VO 文案
                   </p>
@@ -938,15 +938,15 @@ const ProjectsContent = () => {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#5b5fff]"></span>
                 效果验证
               </h4>
-              <p className="text-[13px] font-bold text-gray-800 leading-[1.8]">
+              <p className="text-[13px] font-medium text-gray-800 leading-[1.8]">
                 Prime Day 期间完成 8 条 AI 脚本视频剪辑与广告投放验证，其中 4 条脚本成功出单，
-                <span className="font-bold text-[#5b5fff]"> 引流成本 </span>
+                <span className="font-medium text-[#5b5fff]"> 引流成本 </span>
                 vs 非 AI 二剪内容
-                <span className="font-bold text-[#5b5fff]"> 降低 51% </span>
+                <span className="font-medium text-[#5b5fff]"> 降低 51% </span>
                 ，
-                <span className="font-bold text-[#5b5fff]"> 加购成本 </span>
+                <span className="font-medium text-[#5b5fff]"> 加购成本 </span>
                 vs KOL 内容
-                <span className="font-bold text-[#5b5fff]"> 降低 59% </span>
+                <span className="font-medium text-[#5b5fff]"> 降低 59% </span>
               </p>
             </motion.div>
           </motion.div>
