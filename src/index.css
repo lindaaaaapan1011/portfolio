@@ -1,0 +1,10 @@
+@import "tailwindcss";
+::-webkit-scrollbar { width: 0px; }
+html, body, #root, #root *, #root *::before, #root *::after {
+  cursor: none !important;
+}
+body { 
+  margin: 0; 
+  overflow: hidden; 
+  background-color: black; 
+}
