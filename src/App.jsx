@@ -35,62 +35,7 @@ const RetroCursor = ({ x, y, visible }) => (
 );
 
 // ==========================================
-// 2. 状态 1：复古终端加载页 (Terminal)
-// ==========================================
-const TerminalScreen = ({ onComplete }) => {
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Enter') onComplete();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onComplete]);
-
-  return (
-    <div className={`w-full h-screen bg-black text-[#0047AB] font-mono p-12 text-2xl flex flex-col justify-between cursor-pointer selection:bg-blue-900 ${APPLE_FONT_CLASS}`} onClick={onComplete}>
-      <div className="flex justify-between items-start relative w-full">
-        <motion.div
-          className="w-full max-w-4xl"
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
-          }}
-        >
-          <motion.p variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="mb-12 mt-4 text-gray-400">Loading system components...</motion.p>
-          {[
-            { label: 'File：', val: 'Portfolio Website' },
-            { label: 'Built with：', val: 'React, Tailwind, Framer Motion' },
-            { label: 'Stack:', val: 'React, Next.js, Node, Figma' },
-          ].map((item, i) => (
-            <motion.div key={i} className="flex items-start gap-6 mt-3 min-w-[760px]" variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}>
-              <span className="inline-block w-48 shrink-0">{item.label}</span>
-              <span>{item.val}</span>
-            </motion.div>
-          ))}
-        </motion.div>
-        <motion.img 
-          initial={{ opacity: 0, y: -20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ delay: 0.8, duration: 0.8 }}
-          src="/404.png" 
-          alt="404 Error" 
-          className="absolute right-8 top-0 w-[512px] object-contain drop-shadow-2xl" 
-        />
-      </div>
-      <motion.div 
-        initial={{ opacity: 0 }} animate={{ opacity: [0, 1, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}
-        className="mt-auto mb-8"
-      >
-        <p className="text-3xl">Press<span className="font-bold text-white"> Enter</span> to load the system......</p>
-      </motion.div>
-    </div>
-  );
-};
-
-// ==========================================
-// 3. 状态 2：锁屏界面 (Lock Screen)
+// 2. 状态 1：锁屏界面 (Lock Screen)
 // ==========================================
 const LockScreen = ({ onUnlock }) => {
   const [time, setTime] = useState(new Date());
@@ -982,7 +927,7 @@ const ProjectsContent = () => {
 };
 
 // ==========================================
-// 4. 状态 3&4：桌面系统 UI与窗口逻辑 (Desktop)
+// 3. 状态 2&3：桌面系统 UI与窗口逻辑 (Desktop)
 // ==========================================
 const DesktopScreen = () => {
   const [activeWindow, setActiveWindow] = useState(null);
@@ -1275,17 +1220,17 @@ const DesktopScreen = () => {
 };
 
 // ==========================================
-// 5. 主入口 App 容器 
+// 4. 主入口 App 容器 
 // ==========================================
 export default function PortfolioApp() {
-  const [appState, setAppState] = useState('terminal');
+  const [appState, setAppState] = useState('lockscreen');
   const [cursorPosition, setCursorPosition] = useState({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
   const [cursorVisible, setCursorVisible] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
       if (window.innerWidth < 768) setAppState('mobile');
-      else if (appState === 'mobile') setAppState('terminal');
+      else if (appState === 'mobile') setAppState('lockscreen');
     };
     checkMobile();
     window.addEventListener('resize', checkMobile);
@@ -1329,7 +1274,6 @@ export default function PortfolioApp() {
 
   return (
     <div className={`w-full h-screen overflow-hidden select-none bg-black cursor-none ${APPLE_FONT_CLASS}`}>
-      {appState === 'terminal' && <TerminalScreen onComplete={() => setAppState('lockscreen')} />}
       <AnimatePresence>
         {appState === 'lockscreen' && <LockScreen key="lock" onUnlock={() => setAppState('desktop')} />}
       </AnimatePresence>
